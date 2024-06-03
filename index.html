@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit Kegiatan Mahasiswa - INSTIKI</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+  <!-- Header -->
+  <header class="bg-white shadow">
+    <div class="container mx-auto py-4 flex justify-between items-center">
+      <div class="flex items-center ml-5">
+        <img src="img/logo-vertikal-instiki.png" alt="Logo" class="h-10">
+        <h1 class="text-xl font-semibold ml-4">INSTIKI</h1>
+      </div>
+      <input type="text" placeholder="Cari UKM..." class="border border-gray-300 rounded px-4 py-2 mr-5">
+    </div>
+  </header>
+
+  <!-- Carousel -->
+  <div class="container mx-auto mt-5">
+    <div id="controls-carousel" class="relative w-full" data-carousel="static">
+      <!-- Carousel wrapper -->
+      <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+        <!-- Item 1 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img src="img/instiki.jpeg" class="absolute block w-full h-full object-cover" alt="Image 1">
+        </div>
+        <!-- Item 2 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+          <img src="img/image2.jpg" class="absolute block w-full h-full object-cover" alt="Image 2">
+        </div>
+        <!-- Item 3 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img src="img/image3.jpg" class="absolute block w-full h-full object-cover" alt="Image 3">
+        </div>
+        <!-- Item 4 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img src="img/image4.jpg" class="absolute block w-full h-full object-cover" alt="Image 4">
+        </div>
+        <!-- Item 5 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img src="img/image5.jpg" class="absolute block w-full h-full object-cover" alt="Image 5">
+        </div>
+      </div>
+      <!-- Slider controls -->
+      <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+          <svg class="w-6 h-6 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          <span class="sr-only">Previous</span>
+        </span>
+      </button>
+      <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+          <svg class="w-6 h-6 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+          <span class="sr-only">Next</span> 
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="container mx-auto mt-10 ml-5">
+    <!-- Title Section -->
+    <section class="text-left">
+      <h2 class="text-3xl font-bold">Unit Kegiatan Mahasiswa</h2>
+      <p class="mt-4 max-w-2xl text-gray-600">
+        Unit Kegiatan Mahasiswa (UKM) adalah wadah aktivitas kemahasiswaan luar kelas, baik di lingkungan kegiatan ko-kurikuler maupun ekstra-kurikuler. UKM INSTIKI hadir untuk menunjang minat dan bakat mahasiswa serta mengembangkan soft skills.
+      </p>
+    </section>
+
+    <!-- UKM Section -->
+    <section class="mt-10">
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+        <!-- UKM Card -->
+        <div class="bg-white shadow rounded-lg p-4 text-center mx-2 my-4">
+          <img src="img/idc.jpg" alt="Developer" class="h-24 mx-auto">
+          <h3 class="mt-4 font-semibold">Developer</h3>
+          <a href="#" class="mt-2 inline-block bg-red-500 text-white px-4 py-2 rounded">Login</a>
+        </div>
+        <div class="bg-white shadow rounded-lg p-4 text-center mx-2 my-4">
+          <img src="img/esport.jpg" alt="Esport" class="h-24 mx-auto">
+          <h3 class="mt-4 font-semibold">Esport</h3>
+          <a href="#" class="mt-2 inline-block bg-red-500 text-white px-4 py-2 rounded">Login</a>
+        </div>
+        <div class="bg-white shadow rounded-lg p-4 text-center mx-2 my-4">
+          <img src="img/gym.jpg" alt="We Go Gym" class="h-24 mx-auto">
+          <h3 class="mt-4 font-semibold">Gym</h3>
+          <a href="#" class="mt-2 inline-block bg-red-500 text-white px-4 py-2 rounded">Login</a>
+        </div>
+        <div class="bg-white shadow rounded-lg p-4 text-center mx-2 my-4">
+          <img src="img/idc.jpg" alt="Developer" class="h-24 mx-auto">
+          <h3 class="mt-4 font-semibold">Developer</h3>
+          <a href="#" class="mt-2 inline-block bg-red-500 text-white px-4 py-2 rounded">Login</a>
+        </div>
+        <div class="bg-white shadow rounded-lg p-4 text-center mx-2 my-4">
+          <img src="img/esport.jpg" alt="Esport" class="h-24 mx-auto">
+          <h3 class="mt-4 font-semibold">Esport</h3>
+          <a href="#" class="mt-2 inline-block bg-red-500 text-white px-4 py-2 rounded">Login</a>
+        </div>
+        <div class="bg-white shadow rounded-lg p-4 text-center mx-2 my-4">
+          <img src="img/gym.jpg" alt="We Go Gym" class="h-24 mx-auto">
+          <h3 class="mt-4 font-semibold">Gym</h3>
+          <a href="#" class="mt-2 inline-block bg-red-500 text-white px-4 py-2 rounded">Login</a>
+        </div>
+        <div class="bg-white shadow rounded-lg p-4 text-center mx-2 my-4">
+          <img src="img/idc.jpg" alt="Developer" class="h-24 mx-auto">
+          <h3 class="mt-4 font-semibold">Developer</h3>
+          <a href="#" class="mt-2 inline-block bg-red-500 text-white px-4 py-2 rounded">Login</a>
+        </div>
+        <div class="bg-white shadow rounded-lg p-4 text-center mx-2 my-4">
+          <img src="img/esport.jpg" alt="Esport" class="h-24 mx-auto">
+          <h3 class="mt-4 font-semibold">Esport</h3>
+          <a href="#" class="mt-2 inline-block bg-red-500 text-white px-4 py-2 rounded">Login</a>
+        </div>
+        <div class="bg-white shadow rounded-lg p-4 text-center mx-2 my-4">
+          <img src="img/gym.jpg" alt="We Go Gym" class="h-24 mx-auto">
+          <h3 class="mt-4 font-semibold">Gym</h3>
+          <a href="#" class="mt-2 inline-block bg-red-500 text-white px-4 py-2 rounded">Login</a>
+        </div>
+        <div class="bg-white shadow rounded-lg p-4 text-center mx-2 my-4">
+          <img src="img/idc.jpg" alt="Developer" class="h-24 mx-auto">
+          <h3 class="mt-4 font-semibold">Developer</h3>
+          <a href="#" class="mt-2 inline-block bg-red-500 text-white px-4 py-2 rounded">Login</a>
+        </div>
+        <div class="bg-white shadow rounded-lg p-4 text-center mx-2 my-4">
+          <img src="img/esport.jpg" alt="Esport" class="h-24 mx-auto">
+          <h3 class="mt-4 font-semibold">Esport</h3>
+          <a href="#" class="mt-2 inline-block bg-red-500 text-white px-4 py-2 rounded">Login</a>
+        </div>
+        <div class="bg-white shadow rounded-lg p-4 text-center mx-2 my-4">
+          <img src="img/gym.jpg" alt="We Go Gym" class="h-24 mx-auto">
+          <h3 class="mt-4 font-semibold">Gym</h3>
+          <a href="#" class="mt-2 inline-block bg-red-500 text-white px-4 py-2 rounded">Login</a>
+        </div>
+        <!-- Repeat similar blocks for other UKM cards -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6 mt-10">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2024 INSTIKI. All rights reserved.</p>
+      <p class="mt-2">Jalan Tukad Pakerisan No 97 Denpasar, Telp. 0361-123456</p>
+      <div class="flex justify-center mt-4 space-x-4">
+        <a href="#" class="text-white hover:text-gray-400">Facebook</a>
+        <a href="#" class="text-white hover:text-gray-400">Twitter</a>
+        <a href="#" class="text-white hover:text-gray-400">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+</body>
+</html>

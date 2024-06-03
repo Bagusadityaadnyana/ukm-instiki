@@ -1,0 +1,7 @@
+nodemodules/# .gitignore
+
+# Ignore node_modules
+node_modules/
+
+# Ignore build directories other than public/css
+!public/css/
