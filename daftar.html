@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pendaftaran UKM Tari INSTIKI</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            background-color: #e9ecef;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #6c757d;
+            margin: 0 auto 20px;
+            cursor: pointer;
+        }
+        .profile-pic input {
+            display: none;
+        }
+        .footer {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .footer a {
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h3 class="text-center">HALO SILAHKAN LENGKAPI FORM BERIKUT UNTUK MENDAFTAR DI UKM TARI INSTIKI</h3>
+            <form action="register.php" method="post" enctype="multipart/form-data">
+                <div class="form-group text-center">
+                    <label for="profile-pic" class="profile-pic">
+                        <input type="file" id="profile-pic" name="profile_pic">
+                        <span>+</span>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="full-name" name="full_name" placeholder="Masukan Nama Lengkap" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="nim" name="nim" placeholder="Masukan NIM" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="department" name="department" placeholder="Masukan Jurusan" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="phone-number" name="phone_number" placeholder="Masukan No Telepon" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Masukan Alamat Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Buat Password" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="confirm-password" name="confirm_password" placeholder="Ulangi Password" required>
+                </div>
+                <button type="submit" class="btn btn-danger btn-block">DAFTAR</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>SENIMAN TARI INSTIKI</p>
+                    <p>Jl. Tukad Pakerisan No. 97 Denpasar, Bali, Indonesia</p>
+                    <p><a href="tel:+62361256995">+62 361-256-995</a> | <a href="mailto:instikitari@gmail.com">instikitari@gmail.com</a></p>
+                    <p>WE ARE AVAILABLE ON SOCIAL MEDIA</p>
+                    <p>
+                        <a href="#"><img src="https://img.icons8.com/fluent/24/000000/facebook-new.png" alt="Facebook"></a>
+                        <a href="#"><img src="https://img.icons8.com/fluent/24/000000/instagram-new.png" alt="Instagram"></a>
+                        <a href="#"><img src="https://img.icons8.com/fluent/24/000000/twitter.png" alt="Twitter"></a>
+                        <a href="#"><img src="https://img.icons8.com/fluent/24/000000/youtube-play.png" alt="YouTube"></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
