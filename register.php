@@ -1,53 +1,47 @@
 <?php
-// Koneksi ke database
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "ukm_database";
+session_start();
+include 'db_connect.php'; // Koneksi ke database
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Koneksi gagal: " . $conn->connect_error);
-}
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $full_name = $_POST['full_name'];
     $nim = $_POST['nim'];
     $department = $_POST['department'];
     $phone_number = $_POST['phone_number'];
     $email = $_POST['email'];
-    $password = $_POST['password'];
-    $confirm_password = $_POST['confirm_password'];
+    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+    $role = $_POST['role'];
 
-    // Validasi password
-    if ($password != $confirm_password) {
-        die("Password dan konfirmasi password tidak sama.");
+    // Handle file upload
+    $profile_pic = '';
+    if (isset($_FILES['profile_pic']) && $_FILES['profile_pic']['error'] == 0) {
+        $allowed = ['jpg', 'jpeg', 'png', 'gif'];
+        $file_name = $_FILES['profile_pic']['name'];
+        $file_tmp = $_FILES['profile_pic']['tmp_name'];
+        $file_size = $_FILES['profile_pic']['size'];
+        $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
+
+        if (in_array($file_ext, $allowed)) {
+            $upload_dir = 'uploads/';
+            if (!is_dir($upload_dir)) {
+                mkdir($upload_dir, 0755, true);
+            }
+
+            $new_file_name = uniqid('', true) . '.' . $file_ext;
+            $upload_path = $upload_dir . $new_file_name;
+
+            if (move_uploaded_file($file_tmp, $upload_path)) {
+                $profile_pic = $new_file_name;
+            }
+        }
     }
 
-    // Hash password
-    $password_hash = password_hash($password, PASSWORD_DEFAULT);
-
-    // Upload profile picture
-    if ($_FILES['profile_pic']['name']) {
-        $profile_pic = 'uploads/' . basename($_FILES['profile_pic']['name']);
-        move_uploaded_file($_FILES['profile_pic']['tmp_name'], $profile_pic);
+    $query = "INSERT INTO users (full_name, nim, department, phone_number, email, password, profile_pic, role) VALUES ('$full_name', '$nim', '$department', '$phone_number', '$email', '$password', '$profile_pic', '$role')";
+    if (mysqli_query($conn, $query)) {
+        header('Location: login.php');
+        exit();
     } else {
-        $profile_pic = NULL;
+        echo 'Error: ' . mysqli_error($conn);
     }
-
-    // Masukkan data ke database
-    $stmt = $conn->prepare("INSERT INTO users (full_name, nim, department, phone_number, email, password_hash, profile_pic) VALUES (?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssssss", $full_name, $nim, $department, $phone_number, $email, $password_hash, $profile_pic);
-
-    if ($stmt->execute()) {
-        echo "Pendaftaran berhasil!";
-    } else {
-        echo "Error: " . $stmt->error;
-    }
-
-    $stmt->close();
 }
-
-$conn->close();
 ?>
+    

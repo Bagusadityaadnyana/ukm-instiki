@@ -51,7 +51,7 @@
             <form action="register.php" method="post" enctype="multipart/form-data">
                 <div class="form-group text-center">
                     <label for="profile-pic" class="profile-pic">
-                        <input type="file" id="profile-pic" name="profile_pic">
+                        <input type="file" id="profile-pic" name="profile_pic" accept="image/*">
                         <span>+</span>
                     </label>
                 </div>
@@ -76,6 +76,7 @@
                 <div class="form-group">
                     <input type="password" class="form-control" id="confirm-password" name="confirm_password" placeholder="Ulangi Password" required>
                 </div>
+                <input type="hidden" name="role" value="user">
                 <button type="submit" class="btn btn-danger btn-block">DAFTAR</button>
             </form>
         </div>
