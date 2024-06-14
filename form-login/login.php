@@ -14,7 +14,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $user = mysqli_fetch_assoc($result_check_user);
 
         if (password_verify($password, $user['password'])) {
-            echo '<script>window.location="../homepage.html"</script>';
+            echo '<script>
+                    if (confirm("Login berhasil. Apakah Anda ingin melanjutkan ke home page?")) {
+                        window.location.href = "../homepage.html";
+                    }
+                  </script>';
             exit();
         } else {
             $errors[] = "Password salah";
@@ -24,6 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
