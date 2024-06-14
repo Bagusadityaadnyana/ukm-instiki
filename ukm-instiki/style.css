@@ -1,0 +1,38 @@
+body{
+    overflow-x: hidden;
+}
+.navbar-brand img {
+    max-height: 10px; 
+}
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+}
+#carouselExampleCaptions {
+    margin-bottom: 50px;
+}
+.carousel-caption {
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+.carousel-caption h1{
+    font-size: 70px;
+}
+@media (max-width: 768px) {
+    .text-5xl {
+        font-size: 3rem; /* Adjust font size for smaller screens */
+    }
+}
