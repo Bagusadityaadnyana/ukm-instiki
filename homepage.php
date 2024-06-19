@@ -9,6 +9,9 @@
 </head>
 <body class="bg-gray-100">
   <!-- Header -->
+  <?php if ($role === 'admin'): ?>
+        <a href="dashboard.php"><button>Go to Dashboard</button></a>
+  <?php endif; ?>
   <header class="bg-white shadow">
     <div class="container mx-auto py-4 flex justify-between items-center">
       <div class="flex items-center ml-5">

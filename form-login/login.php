@@ -1,5 +1,6 @@
 <?php
 include('config.php');
+session_start();
 
 $errors = [];
 
@@ -14,11 +15,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $user = mysqli_fetch_assoc($result_check_user);
 
         if (password_verify($password, $user['password'])) {
-            echo '<script>
-                    if (confirm("Login berhasil. Apakah Anda ingin melanjutkan ke home page?")) {
-                        window.location.href = "../homepage.html";
-                    }
-                  </script>';
+            $_SESSION['nim'] = $user['nim'];
+            $_SESSION['role'] = $user['role'];
+
+            echo '<script>window.location="homepage.php"</script>';
             exit();
         } else {
             $errors[] = "Password salah";
