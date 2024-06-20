@@ -48,10 +48,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (empty($errors)) {
-        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        $hashed_password = md5($password);
+        $role = 'USER';
 
-        $query_register = "INSERT INTO users (nama, nim, jurusan, jenis_kelamin, email, no_telepon, password) 
-                           VALUES ('$nama', '$nim', '$jurusan', '$jenis_kelamin', '$email', '$no_telepon', '$hashed_password')";
+        $query_register = "INSERT INTO users (nama, nim, jurusan, jenis_kelamin, email, no_telepon, password, role) 
+                           VALUES ('$nama', '$nim', '$jurusan', '$jenis_kelamin', '$email', '$no_telepon', '$hashed_password', '$role')";
         $result_register = mysqli_query($conn, $query_register);
 
         if ($result_register) {
@@ -69,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pendaftaran INSPRIRA</title>
+    <title>Pendaftaran INSPIRA</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {

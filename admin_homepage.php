@@ -25,7 +25,7 @@
       <div id="item1" class="w-full h-full">
         <img src="img/instiki.jpeg" class="w-full h-full object-cover blur-sm" style="width: 1440px; height: 550px;" />
         <div class="absolute inset-0 flex items-center justify-center">
-          <h2 class="text-white text-4xl font-bold text-center">INSPIRA <br>(Instiki Prestasi dan Kreativitas)</h2>
+          <h2 class="text-white text-4xl font-bold text-center">INSPIRA <br>(ADMIN DASHBOARD)</h2>
         </div>
       </div>
     </div>

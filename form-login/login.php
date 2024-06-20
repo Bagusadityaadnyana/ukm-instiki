@@ -14,11 +14,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mysqli_num_rows($result_check_user) == 1) {
         $user = mysqli_fetch_assoc($result_check_user);
 
-        if (password_verify($password, $user['password'])) {
+        if (md5($password) === $user['password']) {
             $_SESSION['nim'] = $user['nim'];
             $_SESSION['role'] = $user['role'];
 
-            echo '<script>window.location="homepage.php"</script>';
+            if ($user['role'] == 'ADMIN') {
+                // Redirect to admin homepage
+                header("Location: ../admin_homepage.php");
+            } else {
+                // Redirect to regular user homepage
+                header("Location: ../homepage.php");
+            }
             exit();
         } else {
             $errors[] = "Password salah";
@@ -28,7 +34,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
